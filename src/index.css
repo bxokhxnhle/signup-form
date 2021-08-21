@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+@font-face {
+  font-family: "Hatton";
+  src: url("./Hatton-Medium.otf");
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  font-family: Poppins;
+  margin: 0;
+  padding: 0;
+  background-image: url(./desktop-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.component-main {
+  display: flex;
+  max-width: 1080px;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.component-left {
+  flex: 1;
+  margin-right: 43px;
+  display: flex;
+  flex-direction: column;
+}
+
+.component-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-family: Hatton;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 64px;
+  letter-spacing: 2%;
+}
+
+.description {
+  margin-top: 20px;
+  line-height: 26px;
+}
+
+.promotion {
+  box-sizing: border-box;
+  width: 540px;
+  height: 60px;
+  background-color: black;
+  text-align: center;
+  padding: 17px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 8px 10px rgba(29, 22, 81, 0.25);
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.promotion span {
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 540px;
+  height: 470px;
+  border-radius: 9px;
+  background-color: #fff6f1;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 5px;
+  text-align: center;
+  justify-content: center;
+}
+
+input {
+  font-family: Poppins;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 460px;
+  height: 56px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  font-size: 14px;
+  letter-spacing: 1%;
+  font-weight: 600;
+  padding-left: 32px;
+}
+
+#signup-form .first-name {
+  margin-top: 41px;
+}
+
+input::placeholder {
+  color: #5e5b5b;
+}
+
+input::focus,
+input:hover {
+  border: 2px solid black;
+}
+
+.submit {
+  box-sizing: border-box;
+  width: 460px;
+  height: 54px;
+  border-radius: 5px;
+  border: none;
+  background-image: url(./desktop-button-bg.svg);
+  background-position: -10px -8px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2%;
+  margin: 0 auto;
+  display: block;
+}
+
+.submit:hover {
+  background-color: black;
+  color: white;
+  background-image: none;
+}
+
+.warning {
+  flex: 1;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1%;
+  margin-top: 16px;
+}
+
+a[href="https://github.com/bxokhxnhle"]
+{
+  color: #ff7979;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a[href="https://github.com/bxokhxnhle"]:hover
+{
+  color: #c44536;
+}
+
+.error-first-name,
+.error-last-name,
+.error-email,
+.error-password {
+  box-sizing: border-box;
+  width: 460px;
+  display: flex;
+  margin-top: -14px;
+  margin-bottom: 19px;
+  justify-content: flex-end;
+  font-weight: 500;
+  font-size: 11px;
+  font-style: italic;
+  color: #ff7979;
+  margin-left: 40px;
+}
