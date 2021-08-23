@@ -51,7 +51,6 @@ body {
   font-weight: 500;
   font-size: 50px;
   line-height: 64px;
-  letter-spacing: 2%;
 }
 
 .description {
@@ -62,15 +61,17 @@ body {
 .promotion {
   box-sizing: border-box;
   width: 540px;
-  height: 60px;
+  margin-bottom: 23px;
+  margin-top: 16px;
   background-color: black;
   text-align: center;
   padding: 17px;
   color: white;
   border-radius: 10px;
   box-shadow: 0px 8px 10px rgba(29, 22, 81, 0.25);
-  margin-bottom: 20px;
-  margin-top: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  justify-content: center;
 }
 
 .promotion span {
@@ -100,7 +101,6 @@ input {
   margin-bottom: 20px;
   border: 1px solid black;
   font-size: 14px;
-  letter-spacing: 1%;
   font-weight: 600;
   padding-left: 32px;
 }
@@ -124,14 +124,15 @@ input:hover {
   height: 54px;
   border-radius: 5px;
   border: none;
-  background-image: url(./desktop-button-bg.svg);
-  background-position: -10px -8px;
+  background-color: #f8a48d;
   font-family: Poppins;
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: 2%;
+  text-align: center;
+  justify-content: center;
   margin: 0 auto;
   display: block;
+  padding: 0px;
 }
 
 .submit:hover {
@@ -144,8 +145,8 @@ input:hover {
   flex: 1;
   font-size: 11px;
   font-weight: 400;
-  letter-spacing: 1%;
   margin-top: 16px;
+  margin-bottom: 25px;
 }
 
 a[href="https://github.com/bxokhxnhle"]
@@ -175,4 +176,76 @@ a[href="https://github.com/bxokhxnhle"]:hover
   font-style: italic;
   color: #ff7979;
   margin-left: 40px;
+}
+
+@media screen and (max-width: 800px) {
+  .body {
+    background-image: url(./mobile-bg.png);
+  }
+
+  .component-main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }
+
+  .component-left {
+    padding-top: 90px;
+    margin-right: 0px;
+    margin-bottom: 59px;
+  }
+
+  .heading {
+    font-size: 2.75rem;
+    margin-left: 26px;
+    margin-right: 26px;
+  }
+
+  .description {
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .promotion,
+  .form {
+    width: 90vw;
+  }
+
+  input,
+  .submit {
+    width: 77vw;
+  }
+
+  .warning {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .component-main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }
+
+  .heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .promotion {
+    margin-top: 0px;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .component-right {
+    align-items: center;
+  }
 }
