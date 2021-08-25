@@ -51,6 +51,7 @@ body {
   font-weight: 500;
   font-size: 50px;
   line-height: 64px;
+  letter-spacing: 0.02em;
 }
 
 .description {
@@ -133,10 +134,11 @@ input:hover {
   margin: 0 auto;
   display: block;
   padding: 0px;
+  letter-spacing: 0.05em;
 }
 
 .submit:hover {
-  background-color: black;
+  background-color: #b9d1ce;
   color: white;
   background-image: none;
 }
