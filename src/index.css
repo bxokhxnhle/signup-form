@@ -79,6 +79,11 @@ body {
   font-weight: 600;
 }
 
+#signup-form {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -88,7 +93,6 @@ body {
   border-radius: 9px;
   background-color: #fff6f1;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
-  margin-bottom: 5px;
   text-align: center;
   justify-content: center;
 }
@@ -104,10 +108,6 @@ input {
   font-size: 14px;
   font-weight: 600;
   padding-left: 32px;
-}
-
-#signup-form .first-name {
-  margin-top: 41px;
 }
 
 input::placeholder {
@@ -147,7 +147,7 @@ input:hover {
   flex: 1;
   font-size: 11px;
   font-weight: 400;
-  margin-top: 16px;
+  /*margin-top: 16px;*/
   margin-bottom: 25px;
 }
 
@@ -163,10 +163,7 @@ a[href="https://github.com/bxokhxnhle"]:hover
   color: #c44536;
 }
 
-.error-first-name,
-.error-last-name,
-.error-email,
-.error-password {
+.error {
   box-sizing: border-box;
   width: 460px;
   display: flex;
@@ -177,7 +174,16 @@ a[href="https://github.com/bxokhxnhle"]:hover
   font-size: 11px;
   font-style: italic;
   color: #ff7979;
-  margin-left: 40px;
+}
+
+.input-field-error {
+  border: 2px solid #ff7979;
+}
+
+.error-icon {
+  background-image: url(./icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: 409px 16px;
 }
 
 @media screen and (max-width: 800px) {

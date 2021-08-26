@@ -6,16 +6,8 @@ class SignUpForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      errors: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: ''
-      }
+      fields: {},
+      errors: {}
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -23,75 +15,65 @@ class SignUpForm extends React.Component {
     this.handleValidation = this.handleValidation.bind(this);
   }
 
-  handleValidation(event) {
-    let name = event.target.name;
-    let value = event.target.value;
-    let errors = this.state.errors;
-    let formIsValid = true;
+  handleValidation() {
+    let fields = this.state.fields;
+    let errors = {};
+    let validForm = true;
 
-    switch (name) {
-      case 'firstName':
-        if (value === '') {
-          errors.firstName = 'First Name cannot be empty';
-          formIsValid = false;
-        } else errors.firstName = '';
-        break;
-      case 'lastName':
-        if (value === '') {
-          errors.lastName = 'Last Name cannot be empty';
-          formIsValid = false;
-        } else errors.lastName = '';
-        break;
-      case 'email':
-        if (value === '') {
-          errors.email = 'Looks like this is not an email';
-          formIsValid = false;
-        } else errors.email = '';
-        break;
-      case 'password':
-        if (value === '') {
-          errors.password = 'Password cannot be empty';
-          formIsValid = false;
-        } else errors.firstName = '';
-        break;
-      default:
-        break;
-    }
+    if (!fields["firstName"]) {
+      validForm = false;
+      errors["firstName"] = "First Name cannot be empty";
+   }
+
+   if (!fields["lastName"]) {
+     validForm = false;
+     errors["lastName"] = "Last Name cannot be empty";
+  }
+
+  if (!fields["email"]) {
+    validForm = false;
+    errors["email"] = "Looks like this is not an email"
+  }
+
+  if (!fields["password"]) {
+    validForm = false;
+    errors["password"] = "Password cannot be empty";
+  }
 
     this.setState({
-      [errors]: errors
+      errors: errors
     });
 
-    return formIsValid;
+    return validForm;
   }
   
-  handleChange(event, value) {
-    this.setState({ 
-        [value]: event.target.value,
-    });
+  handleChange(field, event) {
+    let fields = this.state.fields;
+    fields[field] = event.target.value;
+
+    this.setState({fields});
   }
 
   handleSubmit(event) {
     event.preventDefault();
     
-    if (this.handleValidation(event)) {
-      alert('Valid Form: ' + this.state.value);
-    } 
-    else {
-      alert('Invalid Form: ' + this.state.value);
-    }
+    this.handleValidation();
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input className="first-name" type="text" name="firstName" value={this.state.firstName} placeholder="First Name" onChange={(event)=> this.handleChange(event, "firstName")} />
+        <input className="first-name" refs="firstName" type="text" value={this.state.fields["firstName"]} placeholder="First Name" onChange={this.handleChange.bind(this, "firstName")} /><br/>
+        <div className='error'>{this.state.errors["firstName"]}</div>
     
-        <input className="last-name" type="text" name="lastName" value={this.state.lastName} placeholder="Last Name" onChange={(event)=> this.handleChange(event, "lastName")} />
+        <input className="last-name" refs="lastName" type="text" value={this.state.fields["lastName"]} placeholder="Last Name" onChange={this.handleChange.bind(this, "lastName")} /><br/>
+        <div className='error'>{this.state.errors["lastName"]}</div>
 
-        <input className="email" type="email" name="email" value={this.state.email} placeholder="Email" onChange={(event)=>this.handleChange(event, "email")} />
+        <input className="email" refs="email" type="email" value={this.state.fields["email"]} placeholder="Email" onChange={this.handleChange.bind(this, "email")} /><br/>
+        <div className='error'>{this.state.errors["email"]}</div>
 
-        <input className="password" type="password" name="password" value={this.state.password} placeholder="Password" onChange={(event)=>this.handleChange(event, "password")} />     
+        <input className="password" refs="password" type="password" value={this.state.fields["password"]} placeholder="Password" onChange={this.handleChange.bind(this, "password")} /><br/>
+        <div className='error'>{this.state.errors["password"]}</div>  
 
         <input className="submit" type="submit" value="CLAIM YOUR FREE TRIAL" />
       </form>
