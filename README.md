@@ -9,3 +9,5 @@ npm start
 That will build and server the project on http://localhost:3000.
 
 ```npm run build``` will make an optimized production build into the build directory.
+
+You can also check it out through [this](https://signup-form-woad.vercel.app/)!
