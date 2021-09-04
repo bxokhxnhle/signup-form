@@ -94,6 +94,7 @@ body {
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.25);
   text-align: center;
   justify-content: center;
+  margin-bottom: 5px;
 }
 
 input {
@@ -113,8 +114,9 @@ input::placeholder {
   color: #5e5b5b;
 }
 
-input::focus,
-input:hover {
+input:focus,
+input:hover,
+.input-field-error:focus {
   border: 2px solid black;
 }
 
@@ -164,23 +166,33 @@ a[href="https://github.com/bxokhxnhle"]:hover
 
 .error {
   display: flex;
-  margin-top: -14px;
-  margin-bottom: 15px;
   justify-content: flex-end;
+  margin-top: -14px;
+  margin-bottom: 19px;
   font-weight: 500;
   font-size: 11px;
   font-style: italic;
   color: #ff7979;
+  padding-right: 7.5%;
 }
 
 .input-field-error {
   border: 2px solid #ff7979;
-}
-
-.error-icon {
+  font-family: Poppins;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 56px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  padding-left: 32px;
   background-image: url(./icon-error.svg);
   background-repeat: no-repeat;
-  background-position: 409px 16px;
+  background-position: 94% 50%;
+}
+
+.input-field-error::placeholder {
+  color: #ff7979;
 }
 
 @media screen and (max-width: 800px) {
