@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @font-face {
   font-family: "Hatton";
   src: url("./Hatton-Medium.otf");
@@ -19,7 +19,6 @@ body {
   padding: 0;
   background-image: url(./desktop-bg.png);
   background-size: cover;
-  background-repeat: no-repeat;
   font-size: 16px;
   font-weight: 500;
 }
@@ -62,7 +61,7 @@ body {
 .promotion {
   box-sizing: border-box;
   width: 540px;
-  margin-bottom: 24px;
+  margin-bottom: 23px;
   margin-top: 16px;
   background-color: black;
   text-align: center;
@@ -73,6 +72,7 @@ body {
   padding-bottom: 20px;
   padding-top: 20px;
   justify-content: center;
+  font-weight: 400;
 }
 
 .promotion span {
