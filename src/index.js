@@ -63,16 +63,16 @@ class SignUpForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input refs="firstName" type="text" value={this.state.fields["firstName"]} placeholder={this.state.errors["firstName"] ? '' : 'First Name'} onChange={this.handleChange.bind(this, "firstName")} className={this.state.errors["firstName"] ? 'input-field-error' : 'input'} /><br/>
+        <input type="text" value={this.state.fields["firstName"]} placeholder={this.state.errors["firstName"] ? '' : 'First Name'} onChange={(event) => this.handleChange("firstName", event)} className={this.state.errors["firstName"] ? 'input-field-error' : 'input'} /><br/>
         <div className='error'>{this.state.errors["firstName"]}</div>
     
-        <input refs="lastName" type="text" value={this.state.fields["lastName"]} placeholder={this.state.errors["lastName"] ? '' : 'Last Name'} onChange={this.handleChange.bind(this, "lastName")} className={this.state.errors["lastName"] ? 'input-field-error' : 'input'} /><br/>
+        <input type="text" value={this.state.fields["lastName"]} placeholder={this.state.errors["lastName"] ? '' : 'Last Name'} onChange={(event) => this.handleChange("lastName", event)} className={this.state.errors["lastName"] ? 'input-field-error' : 'input'} /><br/>
         <div className='error'>{this.state.errors["lastName"]}</div>
 
-        <input refs="email" type="email" value={this.state.fields["email"]} placeholder={this.state.errors["email"] ? 'email@example/com' : 'Email'} onChange={this.handleChange.bind(this, "email")} className={this.state.errors["email"] ? 'input-field-error' : 'input-email'} /><br/>
+        <input type="email" value={this.state.fields["email"]} placeholder={this.state.errors["email"] ? 'email@example/com' : 'Email'} onChange={(event) => this.handleChange("email", event)} className={this.state.errors["email"] ? 'input-field-error' : 'input-email'} /><br/>
         <div className='error'>{this.state.errors["email"]}</div>
 
-        <input refs="password" type="password" value={this.state.fields["password"]} placeholder={this.state.errors["password"] ? '' : 'Password'} onChange={this.handleChange.bind(this, "password")} className={this.state.errors["password"] ? 'input-field-error' : 'input'} /><br/>
+        <input type="password" value={this.state.fields["password"]} placeholder={this.state.errors["password"] ? '' : 'Password'} onChange={(event) => this.handleChange("password", event)} className={this.state.errors["password"] ? 'input-field-error' : 'input'} /><br/>
         <div className='error'>{this.state.errors["password"]}</div>  
 
         <input className="submit" type="submit" value="CLAIM YOUR FREE TRIAL" />
