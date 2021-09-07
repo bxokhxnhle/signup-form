@@ -25,7 +25,6 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
 ![](./public/preview.png)
 ![](./public/mobile-preview.png)
 
